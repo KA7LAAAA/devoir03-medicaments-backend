@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import com.nadhem.medicaments.entities.Categorie;
 
 @RepositoryRestResource(path = "cat")
-@CrossOrigin("http://localhost:4200/")
+@CrossOrigin("*")
 public interface CategorieRepository extends JpaRepository<Categorie, Long> {
 }
