@@ -30,18 +30,18 @@ public class Medicament {
     private Integer stock;
 
     @ManyToOne
-    private Categorie categorie;
+    private Types type;
 
-    public Medicament(String nomMedicament, Double prixMedicament, Date dateExpiration, Boolean ordonnance, Integer stock, Categorie categorie) {
+    public Medicament(String nomMedicament, Double prixMedicament, Date dateExpiration, Boolean ordonnance, Integer stock, Types type) {
         this.nomMedicament = nomMedicament;
         this.prixMedicament = prixMedicament;
         this.dateExpiration = dateExpiration;
         this.ordonnance = ordonnance;
         this.stock = stock;
-        this.categorie = categorie;
+        this.type = type;
     }
 
-    // Alias pour compatibilité directe avec le frontend Angular
+    // Aliases pour compatibilité directe avec le frontend Angular
     public Long getId() {
         return idMedicament;
     }
@@ -64,5 +64,21 @@ public class Medicament {
 
     public void setPrixMillimes(Double prixMillimes) {
         this.prixMedicament = prixMillimes;
+    }
+
+    public Types getTypes() {
+        return type;
+    }
+
+    public void setTypes(Types types) {
+        this.type = types;
+    }
+
+    public Types getCategorie() {
+        return type;
+    }
+
+    public void setCategorie(Types categorie) {
+        this.type = categorie;
     }
 }

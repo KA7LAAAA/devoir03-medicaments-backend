@@ -5,8 +5,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
-import com.nadhem.medicaments.entities.Categorie;
 import com.nadhem.medicaments.entities.Medicament;
+import com.nadhem.medicaments.entities.Types;
 
 @SpringBootApplication
 public class MedicamentsApplication implements CommandLineRunner {
@@ -20,6 +20,6 @@ public class MedicamentsApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        repositoryRestConfiguration.exposeIdsFor(Medicament.class, Categorie.class);
+        repositoryRestConfiguration.exposeIdsFor(Medicament.class, Types.class);
     }
 }

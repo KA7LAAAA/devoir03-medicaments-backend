@@ -3,8 +3,8 @@ package com.nadhem.medicaments.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.nadhem.medicaments.entities.Categorie;
 import com.nadhem.medicaments.entities.Medicament;
+import com.nadhem.medicaments.entities.Types;
 import com.nadhem.medicaments.repos.MedicamentRepository;
 
 @Service
@@ -59,13 +59,13 @@ public class MedicamentServiceImpl implements MedicamentService {
     }
 
     @Override
-    public List<Medicament> findByCategorie(Categorie categorie) {
-        return medicamentRepository.findByCategorie(categorie);
+    public List<Medicament> findByType(Types type) {
+        return medicamentRepository.findByType(type);
     }
 
     @Override
-    public List<Medicament> findByCategorieIdCat(Long id) {
-        return medicamentRepository.findByCategorieIdCat(id);
+    public List<Medicament> findByTypeIdTypes(Long id) {
+        return medicamentRepository.findByTypeIdTypes(id);
     }
 
     @Override

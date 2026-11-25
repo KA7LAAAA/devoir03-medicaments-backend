@@ -47,8 +47,14 @@ public class MedicamentRESTController {
         medicamentService.deleteMedicamentById(id);
     }
 
+    @GetMapping("/medstypes/{idTypes}")
+    public List<Medicament> getMedicamentsByTypesId(@PathVariable("idTypes") Long idTypes) {
+        return medicamentService.findByTypeIdTypes(idTypes);
+    }
+
+    // Alias pour compatibilité
     @GetMapping("/medscat/{idCat}")
     public List<Medicament> getMedicamentsByCatId(@PathVariable("idCat") Long idCat) {
-        return medicamentService.findByCategorieIdCat(idCat);
+        return medicamentService.findByTypeIdTypes(idCat);
     }
 }

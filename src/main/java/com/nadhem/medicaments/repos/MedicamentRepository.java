@@ -5,8 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
-import com.nadhem.medicaments.entities.Categorie;
 import com.nadhem.medicaments.entities.Medicament;
+import com.nadhem.medicaments.entities.Types;
 
 @RepositoryRestResource(path = "rest")
 public interface MedicamentRepository extends JpaRepository<Medicament, Long> {
@@ -16,10 +16,10 @@ public interface MedicamentRepository extends JpaRepository<Medicament, Long> {
     @Query("select m from Medicament m where m.nomMedicament like %:nom and m.prixMedicament > :prix")
     List<Medicament> findByNomPrix(@Param("nom") String nom, @Param("prix") Double prix);
 
-    @Query("select m from Medicament m where m.categorie = ?1")
-    List<Medicament> findByCategorie(Categorie categorie);
+    @Query("select m from Medicament m where m.type = ?1")
+    List<Medicament> findByType(Types type);
 
-    List<Medicament> findByCategorieIdCat(Long id);
+    List<Medicament> findByTypeIdTypes(Long id);
 
     List<Medicament> findByOrderByNomMedicamentAsc();
 

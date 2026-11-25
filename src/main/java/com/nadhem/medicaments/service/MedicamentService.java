@@ -1,8 +1,8 @@
 package com.nadhem.medicaments.service;
 
 import java.util.List;
-import com.nadhem.medicaments.entities.Categorie;
 import com.nadhem.medicaments.entities.Medicament;
+import com.nadhem.medicaments.entities.Types;
 
 public interface MedicamentService {
     Medicament saveMedicament(Medicament m);
@@ -15,8 +15,8 @@ public interface MedicamentService {
     List<Medicament> findByNomMedicament(String nom);
     List<Medicament> findByNomMedicamentContains(String nom);
     List<Medicament> findByNomPrix(String nom, Double prix);
-    List<Medicament> findByCategorie(Categorie categorie);
-    List<Medicament> findByCategorieIdCat(Long id);
+    List<Medicament> findByType(Types type);
+    List<Medicament> findByTypeIdTypes(Long id);
     List<Medicament> findByOrderByNomMedicamentAsc();
     List<Medicament> trierMedicamentsNomsPrix();
 }
