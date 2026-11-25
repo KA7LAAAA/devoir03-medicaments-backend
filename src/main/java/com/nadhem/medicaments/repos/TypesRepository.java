@@ -5,7 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import com.nadhem.medicaments.entities.Types;
 
-@RepositoryRestResource(path = "types")
+@RepositoryRestResource(path = "types", collectionResourceRel = "types")
 @CrossOrigin("*")
 public interface TypesRepository extends JpaRepository<Types, Long> {
 }
