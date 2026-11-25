@@ -16,7 +16,7 @@ import com.nadhem.medicaments.service.MedicamentService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class MedicamentRESTController {
 
     @Autowired
